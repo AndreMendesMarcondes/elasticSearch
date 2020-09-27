@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>7d22c070-9f5c-4134-a894-e5e2eb440ee1</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Docker\docker-compose.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Docker\docker-compose.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Docker\esdata\" />
+  </ItemGroup>
+
+</Project>
